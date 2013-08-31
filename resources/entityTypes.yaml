@@ -1,0 +1,15 @@
+---
+limited: ltd
+company:   co
+corporation: corp
+incorporated: inc
+international: intl
+# germany
+gesellschaft mit beschrankter haftung: gmbh
+# russia
+ojsc: jsc
+jsco: jsc
+zao: jsc
+oao: jsc
+
+...
