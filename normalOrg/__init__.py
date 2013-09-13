@@ -3,6 +3,7 @@
 
 import os
 import yaml
+from unidecode import unidecode
 
 _thisLoc = os.path.dirname(__file__)
 _entityTypes = yaml.load(open(os.path.join(_thisLoc, "../resources", "entityTypes.yaml"), "r"))
@@ -20,12 +21,11 @@ def normalize(org):
         computing edit distance between two strings. therefore incorporated is shortened
         to inc rather than inc being expanded to incorporated.
 
-        #todo: multiple word syn replacement
     """
     if org is None: return None
     for x in _puncToCollapse: org = org.replace(x, '')
     for x in _puncToRemove: org = org.replace(x, ' ')
-    org = org.lower().strip()
+    org = unidecode(org).lower().strip()
     org = " ".join([_puncToReplace[x] if x in _puncToReplace else x for x in org.split(" ")])  # replace synonyms
     org = " ".join([_entityTypes[x] if x in _entityTypes else x for x in org.split(" ")])  # replace synonyms
     for x in _entityTypes:
