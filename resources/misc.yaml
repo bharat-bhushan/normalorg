@@ -4,15 +4,8 @@ stop-words: [
 "sicaf", "sgps", "sep", "se ", "sdn", "sd", "scs", "scop", "sce", "sca", "sasu", "sas", "sarl", "sae", "sa",
 "ry", "rp", "rlllp", "pvt", "pup", "pty", "pl", "peeec", "pc", "oyj", "oy", "ou", "ood", "ok", "ohg", "og",
 "oeg", "oe", "obee", "oao", "nv", "nl", "nk", "mtu", "mepe", "mbh", "ltda", "lp", "lllp", "llc", "la",
-"ky", "ks", "kk", "kgaa", "kg", "keg", "kda", "kd", "is", "huf", "gsk", "gp", "gmk", "gmbh", "gk",
+"ky", "ks", "kk", "kgaa", "kg", "keg", "kda", "kd", "is", "huf", "gsk", "gp", "gmk", "gk",
 "gesbr", "gbr", "gan", "fie", "ev", "eurl", "esv", "epe", "eoood", "eirl", "egen", "eg", "eeig", "eea", "ee",
 "ebvba", "ead", "doo", "dno", "dd", "cvoa", "cvba", "cv", "crl", "bvba", "bv","bhd", "ay", "asbl", "aps",
-"ans", "amba", "akc", "ag", "ae", "adsitz", "ad", "abee", "ab", "aat", "ag", "plc", "llp", "pte"
+"ans", "amba", "akc", "ae", "adsitz", "ad", "abee", "aat", "plc", "pte"
 ]
-syn-set: {
-"ltd":"limited",
-"co":"company",
-"corp":"corporation",
-"inc":"incorporated",
-"&": "and"
-}

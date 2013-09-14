@@ -1,15 +1,101 @@
 ---
-limited: ltd
-company:   co
+# general
+'limited liability partnership': llp
+'limited partnership': lp
+'limited liability limited partnership': lllp
+'professional limited liability company': pllc
+'professional corporations': pc
+'limited liability company': llc
+'limited company': lc
 corporation: corp
 incorporated: inc
-international: intl
+intl: international
+holdings: holding
+limited: ltd
+company: co
+
+grupa: group
+gruppo: group
+
+# brazil
+'sociedade anonima': sa
+
+# croatia
+#za trgovinu: ?
+
+# belgium
+Aktieselskab: as
+
+# france
+'societe a responsabilite limitee': sarl
+
 # germany
 'gesellschaft mit beschrankter haftung': gmbh
-# russia
+'kommanditgesellschaft': kg
+'aktiengesellschaft': ag
+'cokg': 'co kg'
+'deutschland': germany
+'gesmbh': gmbh
+'ges mbh': gmbh
+'gesellschaft mbh': gmbh
+'mit beschrankter haftung': gmbh
+'eingetragene genossenschaften': eg
+'eingetragenen verein': ev
+
+# italy
+'societa per azioni': sa
+'societa anonima': sa
+spa: sa
+
+# mexico
+'sociedad acciones': sa
+'sociedad anonima capital variable': sa
+'sociedad anonima bursatil capital variable': sa
+sabcv: sa
+'sab cv': sa
+
+# norway
+Aksjeselskap: as
+
+
+#poland
+'spolka akcyjna': sa
+'spolka z ograniczona odpowiedzialnoscia': 'sp zoo'
+'sp z oo': 'sp zoo'
+
+# portugal
+'sociedade anonima': sa
+
+# romania
+'societate pe actiuni': sa
+
+# russia / ukraine
+'public joint stock co': jsc
+'joint stock co': jsc
+'public jsc': jsc
+
+
 ojsc: jsc
 jsco: jsc
 zao: jsc
 oao: jsc
+jscb: jsc
+pjsc: jsc
+
+# spain
+'sociedad gestora instituciones inversion colectiva': sgiic
+'sociedad anonima': sa
+'societe anonyme': sa
+'societat anonima': sa
+'sociedad de responsabilidad limitada': sarl
+'societa a responsabilita limitata': sarl
+'sociedad anonima empresa de trabajo temporal': sa
+'s ar l': sarl
+
+# sweeden
+aktiebolag: ab
+aktiebolaget: ab
+oyj: oy
+osakeyhtio: oy
 
 ...

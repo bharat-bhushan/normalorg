@@ -14,8 +14,7 @@ class TestNormalize(unittest.TestCase):
     def test_replace(self):
         self.assertEqual("macys and co", normalize(u"macy's & company"))
         self.assertEqual("williams sanoma sba", normalize(u"williams sanoma s.b.a."))
-        self.assertEqual("ck life sciences intl", normalize(u"ck life sciences int'l"))
-        self.assertEqual("ck life sciences intl", normalize(u"ck life sciences int'l"))
+        self.assertEqual("ck life sciences international", normalize(u"ck life sciences int'l"))
         self.assertEqual("queens moat houses uk ltd", normalize(u"queens moat houses uk limited"))
 
     def test_multipeToken(self):
