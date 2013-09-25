@@ -25,6 +25,7 @@ gruppo: group
 
 # belgium
 Aktieselskab: as
+'a s': as
 
 # france
 'societe a responsabilite limitee': sarl
@@ -62,6 +63,7 @@ Aksjeselskap: as
 'spolka akcyjna': sa
 'spolka z ograniczona odpowiedzialnoscia': 'sp zoo'
 'sp z oo': 'sp zoo'
+'sp z o o': 'sp zoo'
 
 # portugal
 'sociedade anonima': sa
