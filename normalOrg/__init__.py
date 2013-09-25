@@ -22,6 +22,25 @@ for _e in _entityTypes:
         _singleToken[_e] = _entityTypes[_e]
 
 
+def _collapseAbbrv(_s):
+    """ helper method used to collapse abbreviations like "a b c" to "abc"
+        returns list of tokens for efficiency in normalize method
+    """
+    _t = ""
+    _a = []
+    for x in _s.split(" "):
+        if len(x) == 1:
+            _t = _t + x
+        else:
+            if len(_t) > 0:
+                _a.append(_t)
+                _t = ""
+            _a.append(x)
+    if len(_t) > 0:
+        _a.append(_t)
+    return _a
+
+
 def normalize(org):
     """ primary method used to normalize an org name
         accepts: organization name
@@ -37,7 +56,7 @@ def normalize(org):
     for x in _puncToRemove: org = org.replace(x, ' ')
     org = unidecode(org).lower().strip()
     org = " ".join([_puncToReplace[x] if x in _puncToReplace else x for x in org.split(" ")])  # replace synonyms
-    org = " ".join([_singleToken[x] if x in _singleToken else x for x in org.split(" ")])  # replace synonyms
-    for x in _multiToken:  # replace multi token phrases
-        org = org.replace(x, _multiToken[x])
+    org = " ".join([_singleToken[x] if x in _singleToken else x for x in _collapseAbbrv(org)])  # replace synonyms
+    for x in _entityTypes:  # replace multi token phrases
+        org = org.replace(x, _entityTypes[x])
     return " ".join(org.split())  # removes any multiples of white space in middle of strings
