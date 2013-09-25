@@ -11,6 +11,16 @@ _puncToCollapse = yaml.load(open(os.path.join(_thisLoc, "../resources", "puncToC
 _puncToRemove = yaml.load(open(os.path.join(_thisLoc, "../resources", "puncToRemove.yaml"), "r"))
 _puncToReplace = yaml.load(open(os.path.join(_thisLoc, "../resources", "puncToReplace.yaml"), "r"))
 
+# seperate out single token and multi-token entities for faster processing
+_multiToken = {}
+_singleToken = {}
+
+for _e in _entityTypes:
+    if " " in _e:
+        _multiToken[_e] = _entityTypes[_e]
+    else:
+        _singleToken[_e] = _entityTypes[_e]
+
 
 def normalize(org):
     """ primary method used to normalize an org name
@@ -27,7 +37,7 @@ def normalize(org):
     for x in _puncToRemove: org = org.replace(x, ' ')
     org = unidecode(org).lower().strip()
     org = " ".join([_puncToReplace[x] if x in _puncToReplace else x for x in org.split(" ")])  # replace synonyms
-    org = " ".join([_entityTypes[x] if x in _entityTypes else x for x in org.split(" ")])  # replace synonyms
-    for x in _entityTypes:
-        org = org.replace(x, _entityTypes[x])
+    org = " ".join([_singleToken[x] if x in _singleToken else x for x in org.split(" ")])  # replace synonyms
+    for x in _multiToken:  # replace multi token phrases
+        org = org.replace(x, _multiToken[x])
     return " ".join(org.split())  # removes any multiples of white space in middle of strings
